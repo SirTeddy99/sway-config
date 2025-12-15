@@ -43,7 +43,7 @@ output HDMI-A-1 resolution 2560x1440 position 0,0
 output DP-6 resolution 2560x1440 position 2560,0
 output DP-7 resolution 1440x2560 position 5120,0 transform 270
 output eDP-1 resolution 1920x1200 position 7680,0
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/tor/Pictures/background/useThis.jpg fill
 
 # Laptop lid switch
 bindswitch --reload --locked lid:on output eDP-1 disable
@@ -182,7 +182,7 @@ bindsym $mod+minus scratchpad show
 
 # Screenshots using screenshots
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
-bindsym $mod+Print exec bash -c 'FILE=~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png; grim -g "$(slurp)" "$FILE" && ksnip -e "$FILE"'
+bindsym Mod1+Print exec bash -c 'FILE=~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png; grim -g "$(slurp)" "$FILE" && ksnip -e "$FILE"'
 # Resizing
 mode "resize" {
     bindsym $left resize shrink width 10px

@@ -86,12 +86,13 @@ exec spotify
 exec mako
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+exec wl-paste --watch cliphist store
 
 ### Idle configuration (from your swaylock setup)
 exec swayidle -w \
-    timeout 300 'swaylock -f' \
+    timeout 300 'swaylock --clock --indicator --color 1e1e2e -f' \
     timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f'
+    before-sleep 'swaylock --clock --indicator --color 1e1e2e -f'
 
 ### Key bindings (converted from Hyprland)
 
@@ -99,7 +100,7 @@ exec swayidle -w \
 bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
-bindsym $mod+shift+z exec swaylock -f
+bindsym $mod+shift+z exec swaylock --clock --indicator --color 1e1e2e
 
 # Drag floating windows
 floating_modifier $mod normal

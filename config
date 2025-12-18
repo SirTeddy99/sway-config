@@ -67,22 +67,21 @@ workspace 4 output DP-6
 workspace 5 output DP-6
 
 # Workspace assignments
-assign [app_id="vivaldi-stable"] workspace number 1
-assign [app_id="com.mitchellh.ghostty"] workspace number 2
-assign [app_id="obsidian"] workspace number 3
-assign [app_id="vivaldi-faolnafnngnfdaknnbpnkhgohbobgegn-Default"] workspace number 3  # Teams PWA
-assign [app_id="vivaldi-cifhbcnohmdccbgoicgdjpfamggdegmo-Default"] workspace number 3  # Outlook PWA
-assign [app_id="Horizon-client"] workspace number 4
-assign [app_id="Spotify"] workspace number 5
+assign [app_id="vivaldi-stable"] workspace 1
+assign [app_id="com.mitchellh.ghostty"] workspace 2
+assign [class="obsidian"] workspace 3
+assign [app_id="firefox_firefox"] workspace 3
+assign [class="Horizon-client"] workspace 4
+assign [class="Spotify"] workspace 5
 
 # Autostart applications
 exec vivaldi-stable
+exec firefox https://teams.microsoft.com
+exec firefox https://outlook.microsoft.com
+exec flatpak run md.obsidian.Obsidian
+exec gtk-launch horizon-myserver
 exec ghostty
-exec obsidian
-exec vivaldi-stable --app-id=faolnafnngnfdaknnbpnkhgohbobgegn  # Teams PWA
-exec vivaldi-stable --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo  # Outlook PWA
-exec vmware-view  # or horizon-client
-exec spotify
+exec flatpak run com.spotify.Client
 exec mako
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh

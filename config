@@ -76,8 +76,8 @@ assign [class="Spotify"] workspace 5
 
 # Autostart applications
 exec vivaldi-stable
-exec firefox https://teams.microsoft.com
-exec firefox https://outlook.microsoft.com
+exec firefox --new-window https://teams.microsoft.com
+exec firefox --new-window https://outlook.office.com/
 exec flatpak run md.obsidian.Obsidian
 exec gtk-launch horizon-myserver
 exec ghostty
@@ -89,9 +89,8 @@ exec wl-paste --watch cliphist store
 
 ### Idle configuration (from your swaylock setup)
 exec swayidle -w \
-    timeout 300 'pgrep swaylock || swaylock --clock --indicator --color 1e1e2e -f' \
-    timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-    before-sleep 'pgrep swaylock || swaylock --clock --indicator --color 1e1e2e -f'
+    timeout 300 'swaylock --clock --indicator --color 1e1e2e -f' \
+    before-sleep 'swaylock --clock --indicator --color 1e1e2e -f'
 
 ### Key bindings (converted from Hyprland)
 

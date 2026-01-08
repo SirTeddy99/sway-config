@@ -38,11 +38,17 @@ set $menu wofi --show drun
 
 include /etc/sway/config-vars.d/*
 
-### Output configuration (monitors)
+### Output configuration (monitors) work
 output HDMI-A-1 resolution 2560x1440 position 0,0
 output DP-6 resolution 2560x1440 position 2560,0
 output DP-7 resolution 1440x2560 position 5120,0 transform 270
 output eDP-1 resolution 1920x1200 position 7680,0
+
+# Home setup
+# output DP-3 resolution 1920x1080 position 0,0
+# output HDMI-A-1 resolution 3440x1440 position 1920,0
+
+
 output * bg /home/tor/Pictures/background/useThis.jpg fill
 
 # Laptop lid switch
@@ -86,6 +92,8 @@ exec mako
 exec dbus-update-activation-environment --all
 exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec wl-paste --watch cliphist store
+exec --no-startup-id mako
+exec --no-startup-id while true; do ~/.config/sway/scripts/battery-notify.sh; sleep 300; done
 
 ### Idle configuration (from your swaylock setup)
 exec swayidle -w \

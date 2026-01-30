@@ -76,14 +76,13 @@ workspace 5 output DP-6
 assign [app_id="vivaldi-stable"] workspace 1
 assign [app_id="com.mitchellh.ghostty"] workspace 2
 assign [class="obsidian"] workspace 3
-assign [app_id="firefox_firefox"] workspace 3
 assign [class="Horizon-client"] workspace 4
 assign [class="Spotify"] workspace 5
 
 # Autostart applications
 exec vivaldi-stable
-exec firefox --new-window https://teams.microsoft.com
-exec firefox --new-window https://outlook.office.com/
+exec vivaldi-stable --user-data-dir=$HOME/.config/vivaldi-work --new-window https://teams.microsoft.com
+exec vivaldi-stable --user-data-dir=$HOME/.config/vivaldi-work --new-window https://outlook.office.com/
 exec flatpak run md.obsidian.Obsidian
 exec gtk-launch horizon-myserver
 exec ghostty

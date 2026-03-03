@@ -31,7 +31,7 @@ set $up k
 set $right l
 
 # Your preferred terminal (from Hyprland config)
-set $term ghostty
+set $term alacritty
 
 # Application launcher (wofi from your Hyprland setup)
 set $menu wofi --show drun
@@ -45,7 +45,7 @@ output DP-7 resolution 1440x2560 position 5120,0 transform 270
 output eDP-1 resolution 1920x1200 position 7680,0
 
 # Home setup
-# output DP-3 resolution 1920x1080 position 0,0
+# output DP-1 resolution 1920x1080 position 0,0
 # output HDMI-A-1 resolution 3440x1440 position 1920,0
 
 
@@ -74,7 +74,7 @@ workspace 5 output DP-6
 
 # Workspace assignments
 assign [app_id="vivaldi-stable"] workspace 1
-assign [app_id="com.mitchellh.ghostty"] workspace 2
+assign [app_id="alacritty"] workspace 2
 assign [class="obsidian"] workspace 3
 assign [class="Horizon-client"] workspace 4
 assign [class="Spotify"] workspace 5
@@ -85,7 +85,7 @@ exec vivaldi-stable --user-data-dir=$HOME/.config/vivaldi-work --new-window http
 exec vivaldi-stable --user-data-dir=$HOME/.config/vivaldi-work --new-window https://outlook.office.com/
 exec flatpak run md.obsidian.Obsidian
 exec gtk-launch horizon-myserver
-exec ghostty
+exec alacritty
 exec flatpak run com.spotify.Client
 exec mako
 exec dbus-update-activation-environment --all
